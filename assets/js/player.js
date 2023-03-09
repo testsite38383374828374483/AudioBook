@@ -53,8 +53,7 @@ const chaptersModule = (function() {
         chapters[i].classList.remove('active');
       }
     }
-    currentTime = Math.floor(document.querySelector('audio').currentTime);
-    document.querySelector('.progress').style = 'width: '+ String(currentTime / document.querySelector('audio').duration * 100) + '%';
+    document.querySelector('.progress').style = 'width: '+ String(Math.floor(document.querySelector('audio').currentTime / document.querySelector('audio').duration * 100)) + '%';
   }
 
   function bindChapterEvents() {
