@@ -118,3 +118,30 @@ header {
   background: #fff;
   color: #000;
 }
+
+@media screen and (max-width: 600px) {
+  .book-info {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .cover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0px;
+  }
+
+  .chapters {
+      flex-direction: column;
+  }
+
+  .chapters li {
+      margin-bottom: 20px;
+      margin-right: 0px;
+  }
+
+  .progress-bar {
+      width: calc(100% - 75px);
+  }
+}
