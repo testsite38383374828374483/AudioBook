@@ -17,11 +17,6 @@ const playerModule = (function() {
     playButton.classList.remove('playing');
   }
 
-  function renderProgress() {
-    currentTime = Math.floor(document.querySelector('audio').currentTime);
-    document.querySelector('.progress').style = 'width: '+ String(currentTime / document.querySelector('audio').duration * 100) + '%';
-  }
-
   function toggleAudio() {
     if (playing) {
       pauseAudio();
@@ -58,7 +53,8 @@ const chaptersModule = (function() {
         chapters[i].classList.remove('active');
       }
     }
-    playerModule.renderProgress();
+    currentTime = Math.floor(document.querySelector('audio').currentTime);
+    document.querySelector('.progress').style = 'width: '+ String(currentTime / document.querySelector('audio').duration * 100) + '%';
   }
 
   function bindChapterEvents() {
