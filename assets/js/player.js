@@ -54,6 +54,9 @@ const chaptersModule = (function() {
       }
     }
     document.querySelector('.progress').style = 'width: '+ String(Math.floor(document.querySelector('audio').currentTime / document.querySelector('audio').duration * 100)) + '%';
+    if (Math.floor(document.querySelector('audio').currentTime / document.querySelector('audio').duration * 100) > 95){
+      document.querySelector('.play-button').classList.remove('playing');
+    }
   }
 
   function bindChapterEvents() {

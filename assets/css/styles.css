@@ -112,3 +112,9 @@ header {
 .chapters a:hover {
   background-color: #000;
 }
+
+.chapters a.active {
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+}
