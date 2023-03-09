@@ -42,7 +42,7 @@ const chaptersModule = (function() {
   }
 
   function highlightCurrentChapter() {
-    const audioCurrentTime = Math.floor(playerModule.audio.currentTime);
+    const audioCurrentTime = Math.floor(document.querySelector('audio').currentTime);
     for (let i = 0; i < chapters.length; i++) {
       const chapterStartTime = parseInt(chapters[i].getAttribute('data-start-time'));
       const chapterEndTime = parseInt(chapters[i].getAttribute('data-end-time'));
@@ -75,7 +75,7 @@ const chaptersModule = (function() {
 function init() {
   document.querySelector('audio').addEventListener('timeupdate', chaptersModule.highlightCurrentChapter);
   chaptersModule.bindChapterEvents();
-  document.querySelector('audio').playButton.addEventListener('click', playerModule.toggleAudio);
+  document.querySelector('audio').addEventListener('click', playerModule.toggleAudio);
 }
 
 init();
