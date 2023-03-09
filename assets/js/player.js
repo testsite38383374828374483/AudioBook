@@ -73,7 +73,7 @@ const chaptersModule = (function() {
 
 // инициализация плеера и списка глав
 function init() {
-  document.querySelector('audio').audio.addEventListener('timeupdate', chaptersModule.highlightCurrentChapter);
+  document.querySelector('audio').addEventListener('timeupdate', chaptersModule.highlightCurrentChapter);
   chaptersModule.bindChapterEvents();
   document.querySelector('audio').playButton.addEventListener('click', playerModule.toggleAudio);
 }
