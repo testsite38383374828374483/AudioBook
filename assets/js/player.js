@@ -5,13 +5,13 @@ const playerModule = (function() {
   let playing = false;
 
   function playAudio() {
-    audio.play();
+    document.querySelector('audio').play();
     playing = true;
     playButton.classList.add('playing');
   }
 
   function pauseAudio() {
-    audio.pause();
+    document.querySelector('audio').pause();
     playing = false;
     playButton.classList.remove('playing');
   }
@@ -58,7 +58,7 @@ const chaptersModule = (function() {
     for (let i = 0; i < chapters.length; i++) {
       const chapterStartTime = parseInt(chapters[i].getAttribute('data-start-time'));
       chapters[i].addEventListener('click', function() {
-        playerModule.audio.currentTime = chapterStartTime;
+        document.querySelector('audio').currentTime = chapterStartTime;
         playerModule.playAudio();
         scrollToChapter(i);
       });
