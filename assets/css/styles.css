@@ -38,6 +38,9 @@ header {
 
 .player {
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .play-button {
@@ -70,7 +73,9 @@ header {
 .progress-bar {
   height: 4px;
   background-color: #ccc;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  width: 90%;
+  display: flex;
 }
 
 .progress {

@@ -3,6 +3,7 @@ const playerModule = (function() {
   const audio = document.querySelector('audio');
   const playButton = document.querySelector('.play-button');
   let playing = false;
+  let currentTime;
 
   function playAudio() {
     document.querySelector('audio').play();
@@ -14,6 +15,11 @@ const playerModule = (function() {
     document.querySelector('audio').pause();
     playing = false;
     playButton.classList.remove('playing');
+  }
+
+  function renderProgress() {
+    currentTime = Math.floor(document.querySelector('audio').currentTime);
+    document.querySelector('.progress').style = 'width: '+ String(currentTime / document.querySelector('audio').duration * 100) + '%';
   }
 
   function toggleAudio() {
@@ -52,6 +58,7 @@ const chaptersModule = (function() {
         chapters[i].classList.remove('active');
       }
     }
+    playerModule.renderProgress();
   }
 
   function bindChapterEvents() {
@@ -75,7 +82,7 @@ const chaptersModule = (function() {
 function init() {
   document.querySelector('audio').addEventListener('timeupdate', chaptersModule.highlightCurrentChapter);
   chaptersModule.bindChapterEvents();
-  document.querySelector('audio').addEventListener('click', playerModule.toggleAudio);
+  document.querySelector('.play-button').addEventListener('click', playerModule.toggleAudio);
 }
 
 init();
