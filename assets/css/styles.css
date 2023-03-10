@@ -91,16 +91,19 @@ header {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .chapters li {
   flex: 1;
-  margin-right: 10px;
+  min-width: 200px;
+  margin-bottom: 5px;
 }
 
 .chapters a {
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #000;
   color: white;
   text-align: center;
