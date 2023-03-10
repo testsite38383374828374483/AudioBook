@@ -65,9 +65,9 @@ header {
 }
 
 .play-button.playing::before {
-  border-left: none;
   border-right: 25px solid white;
-  margin-left: 0;
+  margin-left: 9px;
+  border: 15px solid #fff;
 }
 
 .progress-bar {
